@@ -14,7 +14,7 @@ const forecast = (lat, lon, callback) => {
     } else if( body.error) {
       callback('Error from Darksky. Errorcode: ' + body.code + ', ' + body.error, undefined)
     } else {
-      callback(undefined, body.daily.data[0].summary + ' Het is nu ' + body.currently.temperature + ' graden. Er is een ' + body.currently.precipProbability * 100 + '% kans op regen .')
+      callback(undefined, body.daily.data[0].summary + ' Het is nu ' + body.currently.temperature + ' graden. Er is een ' + body.currently.precipProbability * 100 + '% kans op regen.' + ' De luchtdruk is ' + body.currently.pressure + ' Hpa')
     }
   })
 }
